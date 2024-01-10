@@ -30,7 +30,9 @@ jobs:
           ruby-version: ${{ matrix.ruby_version }}
           bundler-cache: true
       - name: Unit Tests
-        run: bundle exec rspec --format documentation --force-color --backtrace
+        run: |
+          bundle exec rspec --format documentation --format RspecJunitFormatter --out results/rspec.xml --force-color --backtrace
+          printf '::error::Test execution failed. See results/rspec.xml for details.'
 
   node:
     name: "Test Frontend (Node ${{ matrix.node_version }})"
@@ -50,4 +52,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install
       - name: Run tests and build frontend
-        run: bash script/build
+      - name: Upload Test Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: rspec-results
+          path: results/rspec.xml
