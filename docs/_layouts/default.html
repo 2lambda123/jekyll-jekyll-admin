@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<html lang="en">
 <html lang="en">
   {% include head.html %}
   <body>
@@ -28,7 +30,38 @@
             </ul>
           </div>
 
-          <div class="content">
+            <div class="content">
+            {{ content }}
+            <div class="improve-me">
+              <small>
+                These docs are open-source.
+              </small>
+              <small>
+                You can
+                <a href="https://github.com/{{ site.github.repository_nwo }}/edit/master/docs/{{ page.path }}">
+                  edit this page on GitHub
+                </a>
+                and send us a pull request to improve it.
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="{{ 'assets/highlight.min.js' | relative_url }}"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+      window.onload = function () {
+        var routes = document.querySelector('.routes')
+        var menuIcon = document.querySelector('.menu-icon')
+        menuIcon.addEventListener("click", function(e) {
+          e.preventDefault()
+          routes.classList.toggle('open')
+        });
+      };
+    </script>
+  </body>
+</html>
             {{ content }}
 
             <div class="improve-me">
