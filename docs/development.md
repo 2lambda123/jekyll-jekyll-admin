@@ -39,7 +39,7 @@ this is probably what you want.
 
 #### Running the front end server in development mode
 
-`script/server-frontend`
+`script/server-frontend-node`
 
 This will run the front end server via Node's development stack, meaning changes will be reloaded on subsequent requests
 and is generally useful when making changes to the front end side of things. In the background, it's also going to call
