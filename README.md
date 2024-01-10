@@ -11,6 +11,13 @@ A Jekyll plugin that provides users with a traditional CMS-style graphical inter
 
 ## Installation
 
+To install Jekyll Admin, refer to the [installing plugins](https://jekyllrb.com/docs/plugins/installation/) section of Jekyll's documentation. Here's a quick guide:
+- Add the following to your site's Gemfile:
+  ```ruby
+  gem 'jekyll-admin', group: :jekyll_plugins
+  ```
+- Run `bundle install` to install the plugin dependencies.
+
 Refer to the [installing plugins](https://jekyllrb.com/docs/plugins/installation/) section of Jekyll's documentation and install the `jekyll-admin` plugin as you would any other plugin. Here's the short version:
 
 1.  Add the following to your site's Gemfile:
@@ -23,12 +30,39 @@ Refer to the [installing plugins](https://jekyllrb.com/docs/plugins/installation
 
 ## Usage
 
+To use Jekyll Admin, follow the steps below:
+
+1. Install the `jekyll-admin` plugin by adding the following to your site's Gemfile:
+   ```ruby
+   gem 'jekyll-admin', group: :jekyll_plugins
+   ```
+2. Run `bundle install` to install the plugin dependencies.
+3. Start Jekyll as you would normally by running the command:
+   ```
+   bundle exec jekyll serve
+   ```
+4. Navigate to `http://localhost:4000/admin` to access the administrative interface.
+
 1.  Start Jekyll as you would normally (`bundle exec jekyll serve`)
 2.  Navigate to `http://localhost:4000/admin` to access the administrative interface
 
 ## Options
 
-Jekyll Admin related options can be specified in `_config.yml` under a key called `jekyll_admin`.
+### Contributing to the Project
+
+If you're interested in contributing to Jekyll Admin, we'd love your help. Check out our [contributing guidelines](.github/CONTRIBUTING.md) and the [development documentation](https://jekyll.github.io/jekyll-admin/development/) for more information about how you can get involved.
+
+To customize the labels of collection categories displayed in the Jekyll Admin sidebar, you can specify the sidebar labels in the `_config.yml` file under the `jekyll_admin` key. For example:
+
+```yaml
+jekyll_admin:
+  collections:
+    posts:
+      sidebar_label: News
+    pages:
+      sidebar_label: Pages
+    
+```
 
 ```yaml
 jekyll_admin:
@@ -55,6 +89,10 @@ collections:
 ```
 
 ## Contributing
+
+### Financial Contributors
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/jekyll-admin/contribute)]
 
 Interested in contributing to Jekyll Admin? We’d love your help. Jekyll Admin is an open source project, built one contribution at a time by users like you. See [the contributing instructions](.github/CONTRIBUTING.md), and [the development docs](https://jekyll.github.io/jekyll-admin/development/) for more information.
 
@@ -87,6 +125,8 @@ Support this project with your organization. Your logo will show up here with a 
 <a href="https://opencollective.com/jekyll-admin/organization/7/website"><img src="https://opencollective.com/jekyll-admin/organization/7/avatar.svg"></a>
 <a href="https://opencollective.com/jekyll-admin/organization/8/website"><img src="https://opencollective.com/jekyll-admin/organization/8/avatar.svg"></a>
 <a href="https://opencollective.com/jekyll-admin/organization/9/website"><img src="https://opencollective.com/jekyll-admin/organization/9/avatar.svg"></a>
+
+## License
 
 ## License
 
