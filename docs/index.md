@@ -1,7 +1,7 @@
 ---
-title: Documentation
+title: Jekyll Admin Documentation
 permalink: /
-description: >-
+description: A comprehensive guide to using Jekyll Admin, a Jekyll plugin that provides a graphical interface for content management and site administration.
   A Jekyll plugin that provides users with a traditional CMS-style graphical interface to author content and administer Jekyll
   sites. The project is divided into two parts. A Ruby-based HTTP API that handles Jekyll and filesystem operations, and a
   Javascript-based front end, built on that API.
