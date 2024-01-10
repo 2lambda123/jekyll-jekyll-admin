@@ -1,11 +1,16 @@
-// Import necessary dependencies and functions for testing
+// Import necessary dependencies for writing the unit tests
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../src/reducers';
+import { newMiddleware } from '../src/middleware';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../src/reducers';
 import { newMiddleware } from '../src/middleware';
 
 // Describe the test suite for the new middleware
-describe('New Middleware', () => {
+// Reference the new middleware and other relevant entities
+  describe('New Middleware', () => {
   let store;
 
   beforeEach(() => {
