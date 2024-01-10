@@ -10,10 +10,17 @@ jobs:
   ruby:
     name: "Test Backend (Jekyll ${{ matrix.jekyll_version }}, Ruby ${{ matrix.ruby_version }})"
     runs-on: "ubuntu-latest"
-    env:
+    env: 
+      RUBY_VERSION: ${{ matrix.ruby_version }}
+      NODE_VERSION: ${{ matrix.node_version }}
+      RACK_ENV: ${{ matrix.rack_env }}
+      JEKYLL_LOG_LEVEL: ${{ matrix.jekyll_log_level }}
       JEKYLL_VERSION: ${{ matrix.jekyll_version }}
       JEKYLL_LOG_LEVEL: warn
-      RACK_ENV: test
+      RACK_ENV: ${{ matrix.rack_env }}
+      NODE_VERSION: ${{ matrix.node_version }}
+      RUBY_VERSION: ${{ matrix.ruby_version }}
+      JEKYLL_LOG_LEVEL: ${{ matrix.jekyll_log_level }}
     strategy:
       fail-fast: false
       matrix:
@@ -22,6 +29,18 @@ jobs:
           - "~> 3.9"
           - "~> 4.0"
     steps:
+      - name: Display Versions
+        run: |
+          echo 'Node.js version:'
+          node -v
+          echo 'npm version:'
+          npm -v
+          echo 'Ruby version:'
+          ruby -v
+          echo 'Gem version:'
+          gem -v
+          echo 'Bundle version:'
+          bundle -v
       - name: Checkout Repository
         uses: actions/checkout@v2
       - name: "Set up Ruby ${{ matrix.ruby_version }}"
@@ -29,6 +48,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby_version }}
           bundler-cache: true
+      npm-cache: true
       - name: Unit Tests
         run: bundle exec rspec --format documentation --force-color --backtrace
 
@@ -46,7 +66,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node_version }}
-          cache: "yarn"
+          cache: "npm"
       - name: Install Dependencies
         run: yarn install
       - name: Run tests and build frontend
