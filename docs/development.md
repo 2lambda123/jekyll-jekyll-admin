@@ -12,11 +12,11 @@ This will copy down the code and install all Node and Ruby dependencies.
 
 ### Running tests
 
-`script/cibuild`
+`script/cibuild-ruby`
 
 This will run both Node and Ruby tests.
 
-You can run one or the other with `script/cibuild-node` and `script/cibuild-ruby`.
+You can run one or the other with `.github/workflows/build.yml-node` and `script/cibuild-ruby`.
 
 ### Running Jekyll Admin locally
 
