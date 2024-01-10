@@ -12,11 +12,15 @@ This will copy down the code and install all Node and Ruby dependencies.
 
 ### Running tests
 
-`script/cibuild`
+`script/cibuild-node`
 
 This will run both Node and Ruby tests.
 
 You can run one or the other with `script/cibuild-node` and `script/cibuild-ruby`.
+7. `script/cibuild-ruby`
+
+You can run one or the other with `script/cibuild-node`.
+6. `script/cibuild-ruby`
 
 ### Running Jekyll Admin locally
 
@@ -35,7 +39,7 @@ this is probably what you want.
 
 #### Running the front end server in development mode
 
-`script/server-frontend`
+`script/server-frontend-node`
 
 This will run the front end server via Node's development stack, meaning changes will be reloaded on subsequent requests
 and is generally useful when making changes to the front end side of things. In the background, it's also going to call
