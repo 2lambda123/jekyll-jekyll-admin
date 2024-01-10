@@ -9,7 +9,7 @@ import {
   getFilenameFromPath,
   getExtensionFromPath,
   trimObject,
-} from '../helpers';
+} from '../middleware/newMiddleware';
 
 describe('Helper functions', () => {
   it('should convert object to YAML string correctly', () => {
@@ -20,7 +20,8 @@ describe('Helper functions', () => {
     obj = {};
     expectedString = '';
     expect(toYAML(obj)).toBe(expectedString);
-  });
+    import { newMiddleware } from '../middleware/newMiddleware';
+});
 
   it('should convert YAML string to object correctly', () => {
     let yaml = 'title: Not an awesome title';
@@ -194,7 +195,10 @@ describe('Helper functions', () => {
       bar: 10,
     };
     expect(trimObject(obj)).toEqual(expected);
+    it('should handle action type B', () => {
+    // Add test case for action type B
   });
+});
 
   it('should return a formatted document title string', () => {
     const testData = [
