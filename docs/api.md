@@ -2,7 +2,7 @@
 title: HTTP API
 permalink: /api/
 description: >-
-  NOTE: Prior to version 1.0.0, the HTTP API is to be considered a pre-release API, and is subject to breaking changes without
+  A comprehensive guide to the HTTP API provided by Jekyll Admin: Prior to version 1.0.0, the HTTP API is to be considered a pre-release API, and is subject to breaking changes without
   notice. You're welcome (and are encouraged) to build external tools or apps against this API, but as the API is refined and
   finalized, it may not strictly follow <a href="http://semver.org/">Semantic Versioning</a> standards.
 ---
