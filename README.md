@@ -17,6 +17,11 @@ Refer to the [installing plugins](https://jekyllrb.com/docs/plugins/installation
 
     ```ruby
     gem 'jekyll-admin', group: :jekyll_plugins
+```yaml
+# _config.yml
+plugins:
+  - jekyll-admin
+```
     ```
 
 2.  Run `bundle install`
