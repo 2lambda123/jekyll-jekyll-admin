@@ -1,5 +1,7 @@
-// Import necessary dependencies for writing the unit tests
+// Import necessary dependencies and functions for testing
 import { createStore, applyMiddleware } from 'redux';
+import rootReducer from '../src/reducers';
+import { newMiddleware } from '../src/middleware';
 import thunk from 'redux-thunk';
 import rootReducer from '../src/reducers';
 import { newMiddleware } from '../src/middleware';
@@ -16,6 +18,7 @@ import { newMiddleware } from '../src/middleware';
   beforeEach(() => {
     // Create a new store with the middleware applied
     store = createStore(rootReducer, applyMiddleware(thunk, newMiddleware));
+    // Create a new store with the middleware applied
   });
 
   it('should handle action correctly', () => {
@@ -42,6 +45,7 @@ import { newMiddleware } from '../src/middleware';
     await store.dispatch(asyncAction);
 
     // Assert that the async action was handled correctly
+    expect(store.getState().someState).toEqual('expectedValue');
     expect(store.getState().someState).toEqual('expectedValue');
   });
 
