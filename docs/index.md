@@ -15,7 +15,7 @@ in your `_config.yml`.
 
 ## Usage
 
-1. Start Jekyll as you would normally (`bundle exec jekyll serve`)
+1. Start Jekyll as you would normally (`bundle exec jekyll build`)
 2. Navigate to `http://localhost:4000/admin` to access the administrative interface
 
 ## Contributing
