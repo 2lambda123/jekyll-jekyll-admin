@@ -1,5 +1,5 @@
 // Import necessary dependencies and functions for testing
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, newMiddleware } from 'redux';
 import rootReducer from '../src/reducers';
 import { newMiddleware } from '../src/middleware';
 import thunk from 'redux-thunk';
@@ -17,6 +17,10 @@ import { newMiddleware } from '../src/middleware';
 
   beforeEach(() => {
     // Create a new store with the middleware applied
+    import { createStore, applyMiddleware } from 'redux';
+    import rootReducer from '../src/reducers';
+    import { newMiddleware } from '../src/middleware';
+    import thunk from 'redux-thunk';
     store = createStore(rootReducer, applyMiddleware(thunk, newMiddleware));
     // Create a new store with the middleware applied
   });
