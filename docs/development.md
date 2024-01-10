@@ -16,6 +16,9 @@ This will copy down the code and install all Node and Ruby dependencies.
 
 This will run both Node and Ruby tests.
 
+You can run one or the other with `script/cibuild-node` and `script/cibuild-ruby`.
+7. `script/cibuild-ruby`
+
 You can run one or the other with `script/cibuild-node`.
 6. `script/cibuild-ruby`
 
