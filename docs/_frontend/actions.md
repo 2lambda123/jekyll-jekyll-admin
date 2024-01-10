@@ -88,7 +88,6 @@ Async action for fetching an array of drafts in a sub-directory.
 Async action for fetching the requested draft in a sub-directory.
 
 ### `putDraft(mode, directory, filename = '')`
-
 Async action for creating or updating the requested draft. The content comes
 from `state.metadata`.
 If the path is not provided when `mode` equals `'create'`, it is auto-generated from the `title` metadata.
@@ -118,7 +117,6 @@ array index.
 Action that updates the key of the field with given path in metadata.
 
 ### `updateFieldValue(nameAttr, value)`
-
 Action that updates the value of the field with given path in metadata.
 
 ### `moveArrayItem(namePrefix, srcInd, targetInd)`
@@ -133,7 +131,6 @@ Action that converts the field to the given type.
 ### `updateTitle(title)`
 
 Updates the content title when the input changes.
-
 ### `updateBody(body)`
 
 Updates the content body when the markdown editor changes.
