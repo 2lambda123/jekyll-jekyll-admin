@@ -4,7 +4,7 @@ permalink: /api/
 description: >-
   NOTE: Prior to version 1.0.0, the HTTP API is to be considered a pre-release API, and is subject to breaking changes without
   notice. You're welcome (and are encouraged) to build external tools or apps against this API, but as the API is refined and
-  finalized, it may not strictly follow <a href="http://semver.org/">Semantic Versioning</a> standards.
+  finalized, it may not strictly follow <a href="https://semver.org/">Semantic Versioning</a> standards.
 ---
 
 The below are the documented endpoints of the shared HTTP API. All requests and responses are made in JSON, and should follow
@@ -13,7 +13,7 @@ RESTful standards, including respecting HTTP verbs.
 For simplicity, whenever possible, the API mirrors Jekyll internal data structures, meaning, objects are generally the results
 of calling `.to_liquid.to_json` on an existing Jekyll model (and the resulting fields).
 
-The API is exposed as `http://localhost:4000/_api` (or whatever server/port your Jekyll installation is running on).
+The API is exposed as `https://yourdomain.com/_api` (or whatever server/port your Jekyll installation is running on).
 
 
 ### API Request and response payloads
@@ -71,7 +71,7 @@ A standard JSON object of a directory looks like this:
   "path": "_posts/test",
   "type": "directory",
   "http_url": null,
-  "api_url": "http://localhost:4000/_api/collections/posts/entries/test"
+  "api_url": "https://yourdomain.com/_api/collections/posts/entries/test"
 },
 ```
 
@@ -97,7 +97,7 @@ A JSON object from a Data file subdirectory looks like this:
   "path": "books",
   "type": "directory",
   "http_url": null,
-  "api_url": "http://localhost:4000/_api/data/books/"
+  "api_url": "https://yourdomain.com/_api/data/books/"
 }
 ```
 
