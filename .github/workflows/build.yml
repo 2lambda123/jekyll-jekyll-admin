@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: <build_command> # Replace with the appropriate build command from docs/development.md
+
+      - name: Run tests
+        run: <test_command> # Replace with the appropriate test command from docs/development.md
+
+      - name: Handle failure
+        if: ${{ failure() }}
+        run: echo "Build failed. Please check the logs."
